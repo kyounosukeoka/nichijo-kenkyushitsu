@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#f5efe3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<title>日常研究室 Ver.3.0｜冬の書斎</title>
+<title>日常研究室 Ver.3.2｜冬の書斎</title>
 <link rel="icon" type="image/png" href="./assets/icon-192.png">
 <link rel="apple-touch-icon" href="./assets/icon-192.png">
 <link rel="manifest" href="./manifest.webmanifest">
@@ -80,6 +80,14 @@
   <div id="entryPhotoPreview"></div>
   <div class="field"><label for="entryText">観察内容 *</label><textarea id="entryText" placeholder="目に入ったこと、聞こえたこと、感じたことをそのまま記録しましょう。"></textarea></div>
   <div class="field"><label>五感（複数選択可）</label><div class="senses" id="sensePicker"></div></div>
+  <fieldset class="field comfort-field" aria-describedby="comfortHelp">
+    <legend>不快指数（体感）</legend>
+    <p class="smalltext" id="comfortHelp">観察したときの気持ちを「快」「不快」から選びます。未選択でも記録できます。</p>
+    <div class="comfort-options" role="group" aria-label="不快指数（体感）">
+      <button type="button" class="comfort-choice" data-comfort="快" aria-pressed="false">☀ 快</button>
+      <button type="button" class="comfort-choice" data-comfort="不快" aria-pressed="false">☁ 不快</button>
+    </div>
+  </fieldset>
   <div class="field"><label>この項目の位置情報（自動設定ONなら保存時に取得）</label><button class="btn small soft" type="button" id="entryLocationBtn">📍 現在地を取得する</button><div class="smalltext" id="entryCoordinates">緯度・経度は未取得です</div></div>
   <button class="btn small soft" id="openPaintBtn" type="button" style="margin-top:8px" disabled>✏️ 写真に手書きメモ</button>
   <div id="paintPanel" class="paint-panel" hidden>
@@ -148,6 +156,7 @@
   <div class="stat"><div class="k">未調査の疑問</div><div class="v" id="pendingStat">0</div></div>
  </div>
  <div class="panel"><h3>五感別の観察</h3><div id="senseStats" class="muted">まだ記録がありません。</div></div>
+ <div class="panel"><h3>不快指数（快・不快）の集計</h3><p class="smalltext">体感を選択した観察項目を集計します。過去の未設定項目は割合に含めません。</p><div id="comfortStats" class="muted">まだ記録がありません。</div></div>
 </section>
 </main>
 </div>
